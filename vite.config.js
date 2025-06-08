@@ -1,14 +1,14 @@
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vite'
-import FastGlob from 'fast-glob'
+import fg  from 'fast-glob'
 import tailwindcss from '@tailwindcss/vite'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
 const inputs = [];
 
-for await (const entry of FastGlob('src/**/*.html')) {
+for (const entry of fg.sync('src/**/*.html')) {
   console.log(resolve(__dirname, entry));
   inputs.push(resolve(__dirname, entry));
 }
