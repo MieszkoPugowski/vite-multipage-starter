@@ -102,7 +102,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('sort-select').addEventListener('change', displayArticles);
 
   document.getElementById('login-btn').addEventListener('click', () => {
-  window.location.href = 'login/index.html';
+  e.preventDefault();
+  window.location.href = `${import.meta.env.BASE_URL}login/index.html`;
 });
 
   document.getElementById('logout-btn').addEventListener('click', async () => {
