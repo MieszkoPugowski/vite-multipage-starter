@@ -102,8 +102,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('sort-select').addEventListener('change', displayArticles);
 
   document.getElementById('login-btn').addEventListener('click', () => {
-  window.location.href = '../login/index.html';
+  window.location.href = 'login/index.html';
 });
+
   document.getElementById('logout-btn').addEventListener('click', async () => {
     await supabase.auth.signOut();
     location.reload();
