@@ -18,7 +18,6 @@ document.getElementById('login-form').addEventListener('submit', async (e) => {
     errorMsg.textContent = 'Niepoprawny email lub hasło';
     errorMsg.classList.remove('hidden');
   } else {
-    // Przekieruj do strony głównej po zalogowaniu
     window.location.href = '../index/index.html';
   }
 });
