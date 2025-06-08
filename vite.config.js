@@ -2,6 +2,7 @@ import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vite'
 import { glob } from 'node:fs/promises'
+import tailwindcss from '@tailwindcss/vite'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
@@ -13,13 +14,19 @@ for await (const entry of glob('src/**/*.html')) {
 }
 
 export default defineConfig({
-  plugins: [],
+  base: '/Zadanie-webowe/',
+  plugins: [
+    tailwindcss(),
+  ],
 
   root: resolve(__dirname, 'src'),
   build: {
     emptyOutDir: true,
     rollupOptions: {
-      input: inputs,
+      input: {
+        main: resolve(__dirname, 'src/index/index.html'),
+        login: resolve(__dirname, 'src/login/index.html'),
+      }
     },
     outDir: resolve(__dirname, 'dist'),
   },
