@@ -101,15 +101,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   document.getElementById('sort-select').addEventListener('change', displayArticles);
 
-document.addEventListener('DOMContentLoaded', () => {
-  if (loginBtn) {
-    loginBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.location.href = `${import.meta.env.BASE_URL}login/index.html`;
-    });
-  }
+  document.getElementById('login-btn').addEventListener('click', () => {
+  window.location.href = '/vite-multipage-starter/login/index.html';
 });
-
   document.getElementById('logout-btn').addEventListener('click', async () => {
     await supabase.auth.signOut();
     location.reload();
