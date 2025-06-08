@@ -16,6 +16,20 @@ async function checkUser() {
   } else {
     logoutBtn.classList.add('hidden');
   }
+
+  const loginBtn = document.getElementById('login-btn');
+  if (currentUser) {
+    loginBtn.classList.add('hidden');
+  } else {
+    loginBtn.classList.remove('hidden');
+  }
+
+  const addBtn = document.getElementById('add-article-btn');
+  if (currentUser) {
+    addBtn.classList.remove('hidden');
+  } else {
+    addBtn.classList.add('hidden');
+  }
 }
 
 async function displayArticles() {
@@ -91,6 +105,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   await displayArticles();
 
   document.getElementById('sort-select').addEventListener('change', displayArticles);
+
+  document.getElementById('login-btn').addEventListener('click', () => {
+  window.location.href = '../login/index.html';
+});
   document.getElementById('logout-btn').addEventListener('click', async () => {
     await supabase.auth.signOut();
     location.reload();
