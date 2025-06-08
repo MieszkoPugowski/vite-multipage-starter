@@ -43,8 +43,8 @@ async function displayArticles() {
       <p class="mt-2">${article.content}</p>
       ${currentUser ? `
         <div class="mt-2 space-x-2">
-          <button class="edit-btn bg-yellow-400 px-2 py-1 rounded" data-id="${article.id}">✏️ Edytuj</button>
-          <button class="delete-btn bg-red-500 text-white px-2 py-1 rounded" data-id="${article.id}">🗑️ Usuń</button>
+          <button class="edit-btn bg-yellow-400 px-2 py-1 rounded" data-id="${article.id}">Edytuj</button>
+          <button class="delete-btn bg-red-500 text-white px-2 py-1 rounded" data-id="${article.id}">Usuń</button>
         </div>` : ''}
     </div>
   `).join('');
