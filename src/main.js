@@ -43,11 +43,6 @@ async function displayArticles() {
     .select('*')
     .order(column, { ascending: direction === 'asc' });
 
-  if (error) {
-    container.innerHTML = `<p class="text-red-600">Błąd pobierania artykułów</p>`;
-    return;
-  }
-
   container.innerHTML = articles.map(article => `
     <div class="bg-white p-4 rounded shadow">
       <h3 class="text-lg font-bold">${article.title}</h3>
