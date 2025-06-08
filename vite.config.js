@@ -14,7 +14,7 @@ for await (const entry of glob('src/**/*.html')) {
 }
 
 export default defineConfig({
-  base: '/Zadanie-webowe/',
+  base: '/vite-multipage-starter/',
   plugins: [
     tailwindcss(),
   ],
