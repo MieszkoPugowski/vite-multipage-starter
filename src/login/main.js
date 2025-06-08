@@ -18,6 +18,6 @@ document.getElementById('login-form').addEventListener('submit', async (e) => {
     errorMsg.textContent = 'Niepoprawny email lub hasło';
     errorMsg.classList.remove('hidden');
   } else {
-    window.location.href = '../index/index.html';
+    window.location.href = '../index.html';
   }
 });
