@@ -11,5 +11,10 @@
   "devDependencies": {
     "vite": "^6.3.5"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@supabase/supabase-js": "^2.50.0",
+    "@tailwindcss/vite": "^4.1.8",
+    "fast-glob": "^3.3.3",
+    "tailwindcss": "^4.1.8"
+  }
 }
